@@ -88,7 +88,7 @@ if(cmd === "recomb"){
   if(cmd === "check"){
 
     if(!args[0]) {
-      message.channel.send(message.author.name + " is not gamering!");
+      message.channel.send(message.author.username + " is not gamering!");
     }
       if (args[0] === "1"){
         // function lmao(x) {
