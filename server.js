@@ -135,4 +135,4 @@ message.channel.send("Current Purple Candy Sell Price: `" + price + "` and Buy P
 
 
 
-client.login("ODEzNzI2MzE0NTczOTg3ODQx.YDTfrw.HmKOchsYrLBAi4EJkXabNdwhsj8")
+client.login("process.env.TOKEN")
