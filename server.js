@@ -2,13 +2,14 @@ const { Discord, Client, MessageEmbed}  = require("discord.js");
 const client = new Client();
 const fetch = require('node-fetch');
 
+
 client.on('ready', () => {
   console.log(`B is now gaming ${client.user.tag}!`);
  client.user.setPresence({ activity: { name: '🅱️', type: "WATCHING" }, status: 'dnd' })
   .catch(console.error);
 });
 client.on("message", async message => {
- const prefix = "b!"
+ const prefix = "b!!"
     if (message.author.bot) return;
     if (!message.guild) return;
     if (!message.content.startsWith(prefix)) return;
@@ -71,10 +72,67 @@ const fub = new MessageEmbed()
     
 });
 }
+if(cmd === "recomb"){
+  function lmao(x) {
+    return Number.parseFloat(x).toFixed(2);
+  }
+  fetch("https://api.hypixel.net/skyblock/bazaar")
+      .then(res => res.json())
+      .then(body => {
+  let inkprice = lmao(body.products.RECOMBOBULATOR_3000.quick_status.sellPrice)
+  let buy = lmao(body.products.RECOMBOBULATOR_3000.quick_status.buyPrice)
+  message.channel.send("Current Recombobulator 3000 Sell Price: `" + inkprice + "` and Buy Price: `" + buy + "`");
+  });
+  
+  }
+  if(cmd === "check"){
 
+    if(!args[0]) {
+      message.channel.send(message.author.name + " is not gamering!");
+    }
+      if (args[0] === "1"){
+        // function lmao(x) {
+        //   return Number.parseFloat(x).toFixed(2);
+        // }
+  //       fetch("https://api.hypixel.net/skyblock/bazaar")
+  //     .then(res => res.json())
+  //     .then(body => {
+  // let price = lmao(body.products..quick_status.sellPrice)
+  // let buy = lmao(body.products..quick_status.buyPrice)
+  // message.channel.send("Current  Sell Price: `" + price + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`");
+//})
+// }
+function lmao(x) {
+  return Number.parseFloat(x).toFixed(2);
+}
+          fetch("https://api.hypixel.net/skyblock/bazaar")
+      .then(res => res.json())
+      .then(body => {
+  let price = lmao(body.products.BOOSTER_COOKIE.quick_status.sellPrice)
+  let buy = lmao(body.products.BOOSTER_COOKIE.quick_status.buyPrice)
+  let jsonDate = (body.lastUpdated)
+  var date = new Date(jsonDate);
+  
+  message.channel.send("Current Booster Cookie Sell Price: `" + price + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`");
+      })
+   
+  }
+  if (args[0] === "2"){
+    function lmao(x) {
+      return Number.parseFloat(x).toFixed(2);
+    }
+    fetch("https://api.hypixel.net/skyblock/bazaar")
+  .then(res => res.json())
+  .then(body => {
+let price = lmao(body.products.PURPLE_CANDY.quick_status.sellPrice)
+let buy = lmao(body.products.PURPLE_CANDY.quick_status.buyPrice)
+message.channel.send("Current Purple Candy Sell Price: `" + price + "` and Buy Price: `" + buy + "`");
+})
+} 
+  }
 });
 
 
 
 
-client.login(process.env.TOKEN)
+client.login("ODEzNzI2MzE0NTczOTg3ODQx.YDTfrw.HmKOchsYrLBAi4EJkXabNdwhsj8")
