@@ -9,7 +9,7 @@ client.on('ready', () => {
   .catch(console.error);
 });
 client.on("message", async message => {
- const prefix = "b!!"
+ const prefix = "b!"
     if (message.author.bot) return;
     if (!message.guild) return;
     if (!message.content.startsWith(prefix)) return;
