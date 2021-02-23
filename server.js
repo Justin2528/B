@@ -133,6 +133,8 @@ function lmao(x) {
   .then(body => {
 let price = lmao(body.products.PURPLE_CANDY.quick_status.sellPrice)
 let buy = lmao(body.products.PURPLE_CANDY.quick_status.buyPrice)
+  let jsonDate = (body.lastUpdated)
+  var date = new Date(jsonDate);
 message.channel.send("Current Purple Candy Sell Price: `" + price + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`");
 })
 } 
