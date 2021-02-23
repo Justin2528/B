@@ -56,6 +56,8 @@ fetch("https://api.hypixel.net/skyblock/bazaar")
     .then(body => {
 let inkprice = lmao(body.products.ENCHANTED_INK_SACK.quick_status.sellPrice)
 let buy = lmao(body.products.ENCHANTED_INK_SACK.quick_status.buyPrice)
+    let jsonDate = (body.lastUpdated)
+    var date = new Date(jsonDate);
 message.channel.send("Current Enchanted Ink Sack Sell Price: `" + inkprice + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`")
 });
 
@@ -82,7 +84,9 @@ if(cmd === "recomb"){
       .then(body => {
   let inkprice = lmao(body.products.RECOMBOBULATOR_3000.quick_status.sellPrice)
   let buy = lmao(body.products.RECOMBOBULATOR_3000.quick_status.buyPrice)
-  message.channel.send("Current Recombobulator 3000 Sell Price: `" + inkprice + "` and Buy Price: `" + buy + "`");
+    let jsonDate = (body.lastUpdated)
+    var date = new Date(jsonDate);
+  message.channel.send("Current Recombobulator 3000 Sell Price: `" + inkprice + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`");
   });
   
   }
@@ -98,8 +102,8 @@ if(cmd === "recomb"){
   //       fetch("https://api.hypixel.net/skyblock/bazaar")
   //     .then(res => res.json())
   //     .then(body => {
-//   let jsonDate = (body.lastUpdated)
-//   var date = new Date(jsonDate);
+    // let jsonDate = (body.lastUpdated)
+    // var date = new Date(jsonDate);
   // let price = lmao(body.products..quick_status.sellPrice)
   // let buy = lmao(body.products..quick_status.buyPrice)
   // message.channel.send("Current  Sell Price: `" + price + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`");
@@ -118,7 +122,9 @@ function lmao(x) {
   
   message.channel.send("Current Booster Cookie Sell Price: `" + price + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`");
       })
-     if (args[0] === "2"){
+   
+  }
+  if (args[0] === "2"){
     function lmao(x) {
       return Number.parseFloat(x).toFixed(2);
     }
@@ -127,16 +133,10 @@ function lmao(x) {
   .then(body => {
 let price = lmao(body.products.PURPLE_CANDY.quick_status.sellPrice)
 let buy = lmao(body.products.PURPLE_CANDY.quick_status.buyPrice)
- let jsonDate = (body.lastUpdated)
-  var date = new Date(jsonDate);
-message.channel.send("Current Purple Candy Sell Price: `" + price + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`);
+message.channel.send("Current Purple Candy Sell Price: `" + price + "` and Buy Price: `" + buy + "`. Last Updated: `" + date + "`");
 })
 } 
   }
-
 });
-
-
-
 
 client.login(process.env.TOKEN)
