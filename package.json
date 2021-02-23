@@ -6,9 +6,14 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "dictionary-en": "^3.1.0",
+    "dictionary-en-gb": "^2.3.0",
     "discord.js": "^12.5.1",
-    "node-fetch": "^2.6.1"
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "retext": "^7.0.1",
+    "retext-spell": "^4.0.0",
+    "vfile-reporter": "^6.0.2"
   },
   "engines": {
     "node": "12.x"
